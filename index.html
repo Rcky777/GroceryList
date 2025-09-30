@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><!-- Set character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Mobile-friendly scaling -->
+  <title>Grocery List App</title><!-- Browser tab title -->
+  <link rel="stylesheet" href="style.css"><!-- Link to external CSS -->
+</head>
+<body>
+  <!-- Search bar at the top -->
+  <input id="search-box" type="text" placeholder="Search for a dinner or ingredient">
+
+  <div class="columns"><!-- Now holds 3 columns -->
+
+  <!-- Grocery list column -->
+  <div class="list-container plain">
+    <h2>Grocery List</h2>
+    <ul id="grocery-list"></ul>
+    <button id="clear-list">Clear List</button>
+    <button id="copy-list">Copy List</button>
+  </div>
+
+  <!-- Dinners column -->
+  <div class="list-container">
+    <h2>Dinners / Dinner Components</h2>
+    <ul id="dinners-list"></ul>
+  </div>
+
+  <!-- Ingredients column -->
+  <div class="list-container">
+    <h2>Ingredients</h2>
+    <ul id="ingredients-list"></ul>
+  </div>
+
+</div>
+
+  <!-- Link to external JS -->
+  <script src="script.js"></script>
+</body>
+</html>
