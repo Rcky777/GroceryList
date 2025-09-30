@@ -1,83 +1,114 @@
-/* Basic reset for padding and margins */
+/* --- BASIC RESET --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Page styling */
+/* --- PAGE STYLING --- */
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #f5f5f5;
 }
 
-/* Three columns side by side */
-.columns {
-  display: flex;              /* Arrange children horizontally */
-  gap: 20px;                  /* Space between columns */
-  margin-bottom: 20px;        /* Space below before grocery list */
-}
-
-/*Search bar styling */
+/* --- SEARCH BAR --- */
 #search-box {
   width: 100%;                /* Full width */
-  padding: 10px;              /* Padding inside the box */
-  margin-bottom: 20px;        /* Space below the search bar */
+  padding: 14px 10px;         /* Taller input for easier typing */
+  font-size: 16px;            /* Larger font for readability */
+  margin-bottom: 20px;        /* Space below */
   border: 1px solid #ccc;     /* Light border */
-  border-radius: 4px;         /* Rounded corners */
+  border-radius: 6px;         /* Rounded corners */
 }
 
-/* Style buttons */
+/* --- BUTTONS (CLEAR / COPY) --- */
 button {
-  padding: 8px 12px;
-  background-color:hsl(0, 0%, 0%);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 5px;
+  padding: 10px 16px;         /* Bigger clickable area */
+  background-color: #4CAF50;  /* Green background */
+  color: white;               /* Text color */
+  border: none;               /* Remove default border */
+  border-radius: 6px;         /* Rounded corners */
   cursor: pointer;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;            /* Larger text */
   transition: background-color 0.2s;
 }
 
-/* Making the grocery list plain */
+button:hover {
+  background-color: #45a049;  /* Darker green on hover */
+}
+
+/* --- THREE COLUMNS LAYOUT --- */
+.columns {
+  display: flex;              /* Side-by-side columns */
+  gap: 20px;                  /* Space between columns */
+  margin-bottom: 20px;
+}
+
+/* --- COLUMN STYLING --- */
+.list-container {
+  flex: 1;                    /* Equal width columns */
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Grocery list “plain” style */
 .list-container.plain {
   background-color: #f5f5f5;
   box-shadow: none;
 }
 
-/* Each column styling */
-.list-container {
-  flex: 1;                    /* Each column takes equal space */
-  background: white;          /* White background */
-  padding: 10px;
-  border-radius: 8px;         /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-}
-
-/* Headings inside columns */
+/* --- HEADINGS --- */
 h2 {
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
-/* Unordered lists (dinners, ingredients, grocery) */
+/* --- LISTS --- */
 ul {
-  list-style: none;           /* Remove default bullets */
+  list-style: none;
 }
 
-/* List items (clickable for dinners/ingredients) */
+/* --- LIST ITEMS --- */
 li {
-  padding: 5px;
+  padding: 10px 8px;          /* Easier to tap on mobile */
   cursor: pointer;
+  border-radius: 4px;         /* Subtle rounding on hover highlight */
 }
 
-/* Highlight list item on hover */
 li:hover {
   background-color: #eaeaea;
 }
 
-/* Grocery list checkboxes */
+/* Grocery list items (not clickable) */
 #grocery-list li {
-  cursor: default;            /* Not clickable like dinners/ingredients */
+  cursor: default;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .columns {
+    flex-direction: column;    /* Stack columns vertically */
+  }
+
+  .list-container {
+    width: 100%;               /* Full width on mobile */
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;               /* Buttons stretch full width */
+  }
+
+  #search-box {
+    font-size: 18px;
+    padding: 16px 12px;
+  }
+
+  li {
+    padding: 14px 10px;        /* Bigger tap targets */
+  }
 }
